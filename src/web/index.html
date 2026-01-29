@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Odoo Requests</title>
+    <!-- Telegram WebApp Script -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Header -->
+        <header class="sticky-header">
+            <h1>Purchase Requests</h1>
+            <div class="search-bar">
+                <i class="icon-search">🔍</i>
+                <input type="text" id="searchInput" placeholder="Search requests...">
+            </div>
+            
+            <!-- Filters -->
+            <div class="filter-scroll">
+                <button class="filter-chip active" data-state="all">All</button>
+                <button class="filter-chip" data-state="to_approve">To Approve</button>
+                <button class="filter-chip" data-state="approved">Approved</button>
+                <button class="filter-chip" data-state="draft">Draft</button>
+                <button class="filter-chip" data-state="rejected">Rejected</button>
+            </div>
+        </header>
+
+        <!-- List View -->
+        <main id="prList" class="pr-list">
+            <!-- Loading State -->
+            <div class="loading-skeleton"></div>
+            <div class="loading-skeleton"></div>
+            <div class="loading-skeleton"></div>
+        </main>
+
+        <!-- Detail View (Overlay) -->
+        <div id="detailView" class="detail-overlay">
+            <div class="detail-header">
+                <button class="back-btn" onclick="closeDetail()">← Back</button>
+                <span class="detail-title">Request Details</span>
+            </div>
+            <div class="detail-content" id="detailContent">
+                <!-- Content injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
